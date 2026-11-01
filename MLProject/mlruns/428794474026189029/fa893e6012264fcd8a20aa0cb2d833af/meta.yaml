@@ -1,0 +1,15 @@
+artifact_uri: file:///G:/Workflow-CI/MLProject/mlruns/428794474026189029/fa893e6012264fcd8a20aa0cb2d833af/artifacts
+end_time: 1793521668912
+entry_point_name: ''
+experiment_id: '428794474026189029'
+lifecycle_stage: active
+run_id: fa893e6012264fcd8a20aa0cb2d833af
+run_name: redolent-vole-127
+run_uuid: fa893e6012264fcd8a20aa0cb2d833af
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1793521660400
+status: 3
+tags: []
+user_id: Regis

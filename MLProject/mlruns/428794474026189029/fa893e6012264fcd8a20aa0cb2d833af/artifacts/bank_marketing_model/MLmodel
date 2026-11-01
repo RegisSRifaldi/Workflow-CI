@@ -1,0 +1,20 @@
+artifact_path: bank_marketing_model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.8
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 2.18.0
+model_size_bytes: 5681684
+model_uuid: 385621e03eb64bffaa1d1925763d209d
+run_id: fa893e6012264fcd8a20aa0cb2d833af
+utc_time_created: '2026-11-01 08:27:42.629172'

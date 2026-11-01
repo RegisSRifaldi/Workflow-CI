@@ -1,0 +1,42 @@
+name: Bank Marketing Model CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "MLProject/**"
+      - ".github/workflows/train_model.yml"
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r MLProject/requirements.txt
+
+      - name: Run MLflow Project
+        working-directory: MLProject
+        run: |
+          mlflow run . --env-manager=local
+
+      - name: Upload Model Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: bank-marketing-model-artifacts
+          path: |
+            MLProject/mlruns/
+            MLProject/confusion_matrix.csv
+          if-no-files-found: error
