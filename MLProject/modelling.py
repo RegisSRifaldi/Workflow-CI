@@ -85,8 +85,9 @@ cm_df = pd.DataFrame(
     columns=["Predicted_No", "Predicted_Yes"]
 )
 
-cm_path = os.path.join(BASE_DIR, "confusion_matrix.csv")
-cm_df.to_csv(cm_path)
+cm_path = "confusion_matrix.csv"
+
+cm_df.to_csv(cm_path, index=True)
 
 mlflow.log_artifact(cm_path)
 
